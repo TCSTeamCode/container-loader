@@ -1,0 +1,15 @@
+<ul class="timeline pb-4">
+	<li *ngFor="let itemTimeline of RequestHistory; let index=i; let even = even; let odd = odd">
+		<div [ngClass]="odd?'direction-l': 'direction-r'">
+			<div class="flag-wrapper">
+				<span class="flag">{{itemTimeline?.LatestStatus}}</span>
+                    <span class="time-wrapper">
+                      <span
+                        class="time bg-success text-white">{{itemTimeline?.Timestamp | date:'dd-MMM-yyyy hh:mm:ss'}}</span>
+                    </span>
+                  </div>
+                  <div class="desc" *ngIf="itemTimeline.LastUpdatedBy">Last Updated By:
+                    {{itemTimeline?.LastUpdatedBy}}</div>
+                </div>
+              </li>
+            </ul>
